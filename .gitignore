@@ -1,0 +1,5 @@
+dev_assets
+node_modules
+
+*.pdf
+*.txt
