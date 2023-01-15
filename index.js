@@ -3,11 +3,11 @@ const pdftk = require('node-pdftk');
 const { deleteTextFile, readTextFile, writeTextFile } = require('./lib/filesystem');
 const textToJson = require('./lib/textToJson');
 const { inputObjFormatter } = require('./util/formatter');
-const { errorLog, log} = require('./util/log');
+const { logError, log} = require('./util/log');
 
 async function main() {
   log('Starting pdf-splitter');
-
+  // TODO: Create output dir and temp dir
   // TODO: Look in files dir for all PDFs
 
   // 1. Break up megafile and create dump_data.txt
@@ -15,7 +15,7 @@ async function main() {
     .input('./files/megafile.pdf')
     .burst('./output/temp/%01d.pdf')
     .then(() => log('Finished breaking up megafile.pdf'))
-    .catch(err => errorLog('Error while breaking up megafile, error:', err));
+    .catch(err => logError('Error while breaking up megafile, error:', err));
   
   // 2. Read doc_data.txt file
   const txtFile = await readTextFile('./doc_data.txt');

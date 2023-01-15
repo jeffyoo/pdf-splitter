@@ -2,11 +2,11 @@ function log(text) {
   console.log(text);
 }
 
-function errorLog(text) {
+function logError(text) {
   console.error(text);
 }
 
 module.exports = {
   log,
-  errorLog,
+  logError,
 };
