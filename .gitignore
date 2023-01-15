@@ -1,5 +1,6 @@
 dev_assets
 node_modules
+output
 
 *.pdf
 *.txt
