@@ -33,7 +33,7 @@ async function main() {
     .input('./files/megafile.pdf')
     .burst('./output/tmp/%01d.pdf')
     .then(() => log('Finished breaking up megafile.pdf'))
-    .catch(err => logError('Error while breaking up megafile, error:', err));
+    .catch(err => logError(`Error while breaking up megafile. Error: ${err}`));
   
   // 2. Read doc_data.txt file
   const txtFile = await readTextFile('./doc_data.txt');
